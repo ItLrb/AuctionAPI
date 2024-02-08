@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{538EFBB9-8920-44AB-8711-13D4EEA802BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{715A7014-4A08-47E0-939F-2C948D1FF9F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLWAuction.API", "src\NLWAuction.API\NLWAuction.API.csproj", "{57FA698F-1F63-4AC1-869F-5DA887717986}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57FA698F-1F63-4AC1-869F-5DA887717986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57FA698F-1F63-4AC1-869F-5DA887717986}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57FA698F-1F63-4AC1-869F-5DA887717986}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57FA698F-1F63-4AC1-869F-5DA887717986}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{57FA698F-1F63-4AC1-869F-5DA887717986} = {538EFBB9-8920-44AB-8711-13D4EEA802BB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {533FA4A4-3BAA-4241-B373-9A7E5358B60A}
+	EndGlobalSection
+EndGlobal

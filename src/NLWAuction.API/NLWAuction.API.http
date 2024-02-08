@@ -1,0 +1,6 @@
+@NLWAuction.API_HostAddress = http://localhost:5226
+
+GET {{NLWAuction.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
