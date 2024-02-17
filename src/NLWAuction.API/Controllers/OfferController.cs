@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NLWAuction.API.Communications.Request;
 using NLWAuction.API.Filters;
+using NLWAuction.API.UseCases.Offers.CreateOffers;
 
 namespace NLWAuction.API.Controllers;
 
@@ -9,8 +10,13 @@ public class OfferController : NLWAuctionBaseController
 {
     [HttpPost]
     [Route("{itemId}")]
-    public IActionResult CreateOffer([FromRoute] int itemId, [FromBody] RequestCreateOfferJson request)
+    public IActionResult CreateOffer(
+        [FromRoute] int itemId, 
+        [FromBody] RequestCreateOfferJson request,
+        [FromServices] CreateOffersUseCase useCase)
     {
-        return Created();
+        var id = useCase.Execute(itemId, request);
+
+        return Created(string.Empty, id);
     }
 }
