@@ -7,7 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{538EFBB9-892
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{715A7014-4A08-47E0-939F-2C948D1FF9F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLWAuction.API", "src\NLWAuction.API\NLWAuction.API.csproj", "{57FA698F-1F63-4AC1-869F-5DA887717986}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLWAuction.API", "src\NLWAuction.API\NLWAuction.API.csproj", "{57FA698F-1F63-4AC1-869F-5DA887717986}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseCases.test", "tests\UseCases.test\UseCases.test.csproj", "{76052F50-1B17-482A-8005-37028320FF88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,12 +21,17 @@ Global
 		{57FA698F-1F63-4AC1-869F-5DA887717986}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57FA698F-1F63-4AC1-869F-5DA887717986}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57FA698F-1F63-4AC1-869F-5DA887717986}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76052F50-1B17-482A-8005-37028320FF88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76052F50-1B17-482A-8005-37028320FF88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76052F50-1B17-482A-8005-37028320FF88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76052F50-1B17-482A-8005-37028320FF88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{57FA698F-1F63-4AC1-869F-5DA887717986} = {538EFBB9-8920-44AB-8711-13D4EEA802BB}
+		{76052F50-1B17-482A-8005-37028320FF88} = {715A7014-4A08-47E0-939F-2C948D1FF9F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {533FA4A4-3BAA-4241-B373-9A7E5358B60A}

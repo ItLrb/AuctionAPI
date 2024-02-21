@@ -1,6 +1,11 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using NLWAuction.API.Contracts;
 using NLWAuction.API.Filters;
+using NLWAuction.API.Repositories;
+using NLWAuction.API.Repositories.DataAcess;
 using NLWAuction.API.Services;
+using NLWAuction.API.UseCases.Auctions.GetCurrent;
 using NLWAuction.API.UseCases.Offers.CreateOffers;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -43,6 +48,15 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddScoped<AuthenticationUserAttribute>();
 builder.Services.AddScoped<LoggedUser>();
 builder.Services.AddScoped<CreateOffersUseCase>();
+builder.Services.AddScoped<GetCurrentAuctionUseCase>();
+builder.Services.AddScoped<IAuctionRepository, AuctionRepository>();
+builder.Services.AddScoped<IOfferRepository, OfferRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+builder.Services.AddDbContext<NLWAuctionDbContext>(options =>
+{
+    options.UseSqlite(@"Data Source=C:\Users\italo\Downloads\leilaoDbNLW.db");
+});
 
 builder.Services.AddHttpContextAccessor();
 

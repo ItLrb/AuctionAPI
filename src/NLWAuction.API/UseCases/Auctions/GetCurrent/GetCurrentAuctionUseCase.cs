@@ -1,18 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using NLWAuction.API.Contracts;
 using NLWAuction.API.Entities;
-using NLWAuction.API.Repositories;
 
 namespace NLWAuction.API.UseCases.Auctions.GetCurrent;
 
 public class GetCurrentAuctionUseCase
 {
-    public Auction? Execute()
-    {
-        var repository = new NLWAuctionDbContext();
+    private readonly IAuctionRepository _repository;
 
-        return repository
-            .Auctions
-            .Include(auction => auction.Items)
-            .FirstOrDefault();
-    }
+    public GetCurrentAuctionUseCase(IAuctionRepository repository) => _repository = repository;
+    public Auction? Execute() => _repository.GetCurrent();
+
 }

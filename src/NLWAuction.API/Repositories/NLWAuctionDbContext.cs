@@ -5,12 +5,17 @@ namespace NLWAuction.API.Repositories;
 
 public class NLWAuctionDbContext : DbContext
 {
+    public NLWAuctionDbContext(DbContextOptions options) : base(options)
+    {
+
+    }
+
     public DbSet<Auction> Auctions { get; set; }
     public DbSet<Users> Users { get; set; }
     public DbSet<Offer> Offers { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    internal Users GetUserByEmail(string email)
     {
-        optionsBuilder.UseSqlite(@"Data Source=C:\Users\italo\Downloads\leilaoDbNLW.db");
+        throw new NotImplementedException();
     }
 }

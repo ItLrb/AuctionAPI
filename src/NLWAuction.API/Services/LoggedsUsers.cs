@@ -1,4 +1,5 @@
-﻿using NLWAuction.API.Entities;
+﻿using NLWAuction.API.Contracts;
+using NLWAuction.API.Entities;
 using NLWAuction.API.Repositories;
 
 namespace NLWAuction.API.Services;
@@ -6,20 +7,21 @@ namespace NLWAuction.API.Services;
 public class LoggedUser
 {
     private readonly IHttpContextAccessor _httpContextAccessor;
+    private readonly IUserRepository _repository;
 
-    public LoggedUser(IHttpContextAccessor httpContext)
+    public LoggedUser(IHttpContextAccessor httpContext, IUserRepository repository)
     {
         _httpContextAccessor = httpContext;
+        _repository = repository;
     }
 
     public Users User()
     {
-        var repository = new NLWAuctionDbContext();
 
         var token = TokenOnRequest();
         var email = FromBase64String(token);
 
-        return repository.Users.First(user => user.Email.Equals(email));
+        return _repository.GetUserByEmail(email);
     }
 
     private string TokenOnRequest()
