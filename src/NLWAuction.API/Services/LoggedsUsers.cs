@@ -4,7 +4,7 @@ using NLWAuction.API.Repositories;
 
 namespace NLWAuction.API.Services;
 
-public class LoggedUser
+public class LoggedUser : ILoggedUser
 {
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly IUserRepository _repository;
@@ -36,5 +36,10 @@ public class LoggedUser
         var data = Convert.FromBase64String(base64);
 
         return System.Text.Encoding.UTF8.GetString(data);
+    }
+
+    User ILoggedUser.User()
+    {
+        throw new NotImplementedException();
     }
 }

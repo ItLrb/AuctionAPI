@@ -46,8 +46,8 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 builder.Services.AddScoped<AuthenticationUserAttribute>();
-builder.Services.AddScoped<LoggedUser>();
-builder.Services.AddScoped<CreateOffersUseCase>();
+builder.Services.AddScoped<ILoggedUser, LoggedUser>();
+builder.Services.AddScoped<CreateOfferUseCase>();
 builder.Services.AddScoped<GetCurrentAuctionUseCase>();
 builder.Services.AddScoped<IAuctionRepository, AuctionRepository>();
 builder.Services.AddScoped<IOfferRepository, OfferRepository>();

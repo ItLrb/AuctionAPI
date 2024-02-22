@@ -13,7 +13,7 @@ public class OfferController : NLWAuctionBaseController
     public IActionResult CreateOffer(
         [FromRoute] int itemId, 
         [FromBody] RequestCreateOfferJson request,
-        [FromServices] CreateOffersUseCase useCase)
+        [FromServices] CreateOfferUseCase useCase)
     {
         var id = useCase.Execute(itemId, request);
 
